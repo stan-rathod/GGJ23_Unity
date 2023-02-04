@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Data_Dialogues
   m_EditorClassIdentifier: 
   dialogues:
-  - First
+  - First something
   - Second
   - Third
   - Forth
