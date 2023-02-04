@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6221895104025639518}
   - component: {fileID: 6225678721109729185}
   m_Layer: 0
-  m_Name: Main Palette
+  m_Name: SunnyLandTilePalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4537135605510632751}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 0.4, y: 0.4, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
