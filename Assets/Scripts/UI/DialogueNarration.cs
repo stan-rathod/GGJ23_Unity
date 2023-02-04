@@ -29,18 +29,21 @@ public class DialogueNarration : MonoBehaviour
             dialogueText.DOFade(1, 0.1f);
             dialogueText.text = dialogueData.dialogues[i];
             yield return new WaitForSeconds(2.0f);
-            dialogueText.DOFade(0, 0.1f);
-            yield return new WaitForSeconds(0.2f);
+            if (i != dialogueData.dialogues.Count - 1)
+            {
+                dialogueText.DOFade(0, 0.1f);
+                yield return new WaitForSeconds(0.2f);
+            }
         }
 
-        skipButton.SetActive(false);
         LevelManager.Instance.LoadScene("LV_Scene1");
+        gameObject.SetActive(false);
 	}
 
     public void Skip()
     {
         StopCoroutine(coroutine);
-        skipButton.SetActive(false);
         LevelManager.Instance.LoadScene("LV_Scene1");
+        gameObject.SetActive(false);
     }
 }

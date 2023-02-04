@@ -9,13 +9,15 @@ namespace Platformer.Mechanics
     /// </summary>
     public class VictoryZone : MonoBehaviour
     {
+        [SerializeField] private string nextLevel = "LV_Scene1";
         void OnTriggerEnter2D(Collider2D collider)
         {
             var p = collider.gameObject.GetComponent<PlayerController>();
             if (p != null)
             {
-                var ev = Schedule<PlayerEnteredVictoryZone>();
-                ev.victoryZone = this;
+                // var ev = Schedule<PlayerEnteredVictoryZone>();
+                // ev.victoryZone = this;
+                LevelManager.Instance.LoadScene(nextLevel);
             }
         }
     }
