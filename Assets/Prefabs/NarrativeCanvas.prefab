@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab7bd96c41805f34695d403f669707f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipButton: {fileID: 8616612377221452617}
   dialogueText: {fileID: 8616612376785676080}
   dialogueData: {fileID: 11400000, guid: 859c8729b31bf384599a57b4fb93bc93, type: 2}
 --- !u!1 &8616612376785676082

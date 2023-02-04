@@ -5,12 +5,14 @@ using DG.Tweening;
 
 public class DialogueNarration : MonoBehaviour
 {
+    [SerializeField] private GameObject skipButton;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private NarrativeDialogue dialogueData;
     private IEnumerator coroutine;
 
     private void Start()
     {
+        skipButton.SetActive(false);
         dialogueText.text = "";
         coroutine = DialogueSequence();
         StartCoroutine(coroutine);
@@ -20,6 +22,7 @@ public class DialogueNarration : MonoBehaviour
 	{
 		// Start after one second delay (to ignore Unity hiccups when activating Play mode in Editor)
 		yield return new WaitForSeconds(1);
+        skipButton.SetActive(true);
 
         for (int i = 0; i < dialogueData.dialogues.Count; i++)
         {
@@ -29,11 +32,15 @@ public class DialogueNarration : MonoBehaviour
             dialogueText.DOFade(0, 0.1f);
             yield return new WaitForSeconds(0.2f);
         }
+
+        skipButton.SetActive(false);
+        LevelManager.Instance.LoadScene("LV_Scene1");
 	}
 
     public void Skip()
     {
         StopCoroutine(coroutine);
-        dialogueText.text = "Done";
+        skipButton.SetActive(false);
+        LevelManager.Instance.LoadScene("LV_Scene1");
     }
 }
