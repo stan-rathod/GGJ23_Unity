@@ -41,8 +41,6 @@ public class PlayerAttack : MonoBehaviour
 
         Transform trans =  spriteRenderer.flipX ? attackPoint2 : attackPoint;
 
-        Debug.Log(trans.gameObject.name);
-
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(trans.position, attackRange, enemyLayer);
 
         foreach (Collider2D enemy in hitEnemies)
@@ -50,6 +48,11 @@ public class PlayerAttack : MonoBehaviour
             if (enemy.TryGetComponent(out EnemyController enemyController))
             {
                 enemyController.ApplyDamage(attackDamage, playerController);
+            }
+            
+            if (enemy.TryGetComponent(out AI_PiranhaPlant piranhaPlant))
+            {
+                piranhaPlant.ApplyDamage(attackDamage, playerController);
             }
         }
     }
