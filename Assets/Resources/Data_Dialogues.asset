@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: Data_Dialogues
   m_EditorClassIdentifier: 
   dialogues:
-  - First something
-  - Second
-  - Third
-  - Forth
-  - Fif=pth
-  - Sixth
-  - Final
+  - Once upon a time, deep in the heart of a dense forest, there lived a lumberjack
+    named Jack.
+  - 'Jack was a skilled woodcutter, known for his strength and determination. '
+  - He lived a simple life, spending his days chopping down trees and selling the
+    wood to nearby villages.
+  - However, Jack's peaceful existence was about to be disrupted. A mysterious force
+    had awoken within the forest, causing strange and dangerous creatures to appear.
+  - The villagers were frightened and sought Jack's help to restore peace to the
+    forest.
+  - Jack knew he was the only one who could face this challenge, so he grabbed his
+    trusty axe and set out into the forest.
+  - Little did he know, this was just the beginning of an epic adventure that would
+    test his courage and determination.
+  - Can Jack save the forest and restore peace to the land? The adventure awaits!
