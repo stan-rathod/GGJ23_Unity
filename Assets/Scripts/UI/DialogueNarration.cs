@@ -28,7 +28,7 @@ public class DialogueNarration : MonoBehaviour
         {
             dialogueText.DOFade(1, 0.1f);
             dialogueText.text = dialogueData.dialogues[i];
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(3.0f);
             if (i != dialogueData.dialogues.Count - 1)
             {
                 dialogueText.DOFade(0, 0.1f);

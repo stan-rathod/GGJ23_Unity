@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -28,6 +28,7 @@ public class LevelManager : Singleton<LevelManager>
         var scene = SceneManager.LoadSceneAsync(sceneName);
         scene.allowSceneActivation = false;
         loadingCanvas.SetActive(true);
+        await LoadingScreenTransition(0, 1);
 
         do
         {
@@ -36,6 +37,7 @@ public class LevelManager : Singleton<LevelManager>
         } while (scene.progress < 0.9f);
 
         scene.allowSceneActivation = true;
+        await LoadingScreenTransition(1, 0);
         loadingCanvas.SetActive(false);
     }
 
@@ -49,4 +51,20 @@ public class LevelManager : Singleton<LevelManager>
     //         yield return null;
     //     }
     // }
+
+    [SerializeField] private Image transitionPanel;
+
+    public async Task LoadingScreenTransition(float from = 0, float to = 1)
+    {
+        transitionPanel.fillAmount = from;
+        transitionPanel.fillMethod = Image.FillMethod.Horizontal; // (Image.FillMethod)Random.Range(0, 4);
+        transitionPanel.fillOrigin = 1; // Random.Range(0, 4);
+        // transitionPanel.fillClockwise = (Random.Range(0, 2) == 1);
+
+        while (transitionPanel.fillAmount != to)
+        {
+            transitionPanel.fillAmount = Mathf.MoveTowards(transitionPanel.fillAmount, to, 1 * Time.deltaTime);
+            await Task.Yield();
+        }
+    }
 }

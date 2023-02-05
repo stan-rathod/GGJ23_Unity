@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingCanvas: {fileID: 4689943261650709951}
   progressBar: {fileID: 3331694047086360612}
+  transitionPanel: {fileID: 3025899249763795325}
 --- !u!114 &3962254043037581085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +282,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f2f83c5d60234f4fa94112412054537, type: 3}
+--- !u!114 &3025899249763795325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5669690717052367427, guid: 4f2f83c5d60234f4fa94112412054537,
+    type: 3}
+  m_PrefabInstance: {fileID: 7444712963236606782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3331694047086360612 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5290710222483688218, guid: 4f2f83c5d60234f4fa94112412054537,
