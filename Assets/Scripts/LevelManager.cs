@@ -63,7 +63,7 @@ public class LevelManager : Singleton<LevelManager>
 
         while (transitionPanel.fillAmount != to)
         {
-            transitionPanel.fillAmount = Mathf.MoveTowards(transitionPanel.fillAmount, to, 1 * Time.deltaTime);
+            transitionPanel.fillAmount = Mathf.MoveTowards(transitionPanel.fillAmount, to, 3 * Time.deltaTime);
             await Task.Yield();
         }
     }
