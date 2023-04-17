@@ -51,5 +51,19 @@ namespace Platformer.Mechanics
             }
         }
 
+        public float maxHP = 100;
+        public bool IsAlive => currentHP > 0;
+        float currentHP = 100;
+
+        public void ApplyDamage(float BaseDamage, PlayerController player)
+        {
+            currentHP = Mathf.Clamp(currentHP - BaseDamage, 0, maxHP);
+            if (currentHP <= 0)
+            {
+                EnemyController enemy = this;
+                Schedule<EnemyDeath>().enemy = enemy;
+            }
+        }
+
     }
 }
